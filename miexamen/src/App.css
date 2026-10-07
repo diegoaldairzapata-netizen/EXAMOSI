@@ -1,0 +1,177 @@
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+
+  
+  background: 
+    radial-gradient(circle at 15% 20%, rgba(0, 208, 255, 0.186) 0%, transparent 40%),
+    radial-gradient(circle at 85% 80%, rgba(156, 89, 182, 0.307) 0%, transparent 40%),
+    #0b0f14;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #e0e0e0;
+}
+
+.contenedor {
+  width: 900px; 
+  max-width: 95%; 
+  min-height: 500px; 
+  margin-top: 50px;
+  padding: 30px;
+  
+  background: rgba(20, 25, 35, 0.4); 
+  backdrop-filter: blur(16px);     
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+  border-right: 1px solid rgba(0, 0, 0, 0.4);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+}
+
+.layout-dos-columnas {
+  display: grid;
+  grid-template-columns: 1fr 1fr; 
+  gap: 40px; 
+  align-items: start; 
+  margin-top: 20px;
+}
+
+h1, h2 {
+  text-align: center;
+  margin-top: 0;
+  color: #ffffff;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+
+.formulario {
+  display: grid;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.input-texto, .input-busqueda {
+  padding: 12px;
+  background: rgba(0, 0, 0, 0.2); 
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  font-size: 16px;
+  color: white;
+  outline: none;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+}
+
+.input-busqueda {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.input-texto::placeholder, .input-busqueda::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.input-texto:hover, .input-busqueda:hover,
+.input-texto:focus, .input-busqueda:focus {
+  border: 1px solid #00d2ff; 
+  box-shadow: 0 0 12px rgba(0, 210, 255, 0.3), inset 0 0 6px rgba(0, 210, 255, 0.1);
+  background: rgba(0, 210, 255, 0.03);
+}
+
+.btn-guardar {
+  padding: 12px;
+  background: rgba(0, 210, 255, 0.1);
+  backdrop-filter: blur(4px); 
+  color: #00d2ff; 
+  border: 1px solid rgba(0, 210, 255, 0.4);
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+.btn-guardar:hover {
+  background: rgba(0, 210, 255, 0.25);
+  color: #ffffff;
+  border-color: #00d2ff;
+  box-shadow: 0 0 15px rgba(0, 210, 255, 0.5);
+  transform: translateY(-2px);
+}
+
+.lista-alumnos {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  height: 270px;
+  overflow-y: auto;  
+  padding-right: 10px; 
+}
+
+.item-alumno {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(5px);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+  border-right: 1px solid rgba(0, 0, 0, 0.3);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  padding: 15px;
+  margin-bottom: 12px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.item-alumno:hover {
+  border: 1px solid #00d2ff;
+  box-shadow: 0 0 10px rgba(0, 210, 255, 0.2);
+  transform: translateX(4px); 
+}
+
+.btn-borrar {
+  background: rgba(255, 50, 50, 0.1);
+  backdrop-filter: blur(4px);
+  color: #ff4d4d;
+  border: 1px solid rgba(255, 50, 50, 0.4);
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-borrar:hover {
+  background: rgba(255, 50, 50, 0.3);
+  color: white;
+  border-color: #ff4d4d;
+  box-shadow: 0 0 12px rgba(255, 50, 50, 0.6);
+}
+
+.lista-alumnos::-webkit-scrollbar {
+  width: 6px;
+}
+.lista-alumnos::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2); 
+  border-radius: 10px;
+}
+.lista-alumnos::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15); 
+  border-radius: 10px;
+}
+.lista-alumnos::-webkit-scrollbar-thumb:hover {
+  background: #00d2ff; 
+  box-shadow: 0 0 5px #00d2ff;
+}
+
+@media (max-width: 768px) {
+  .layout-dos-columnas {
+    grid-template-columns: 1fr;
+  }
+}
